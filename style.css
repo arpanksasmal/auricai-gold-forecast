@@ -1,0 +1,185 @@
+/* Set background and global font */
+html, body, [data-testid="stApp"] {
+    background-color: #f3dfb8;
+    color: #2c1d05;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar styling */
+section[data-testid="stSidebar"] {
+    background-color: #fff8e1;
+    border-right: 2px solid #d9a441;
+}
+[data-testid="stSidebar"] .css-1d391kg {
+    color: #2c1d05;
+}
+
+/* Option menu (if using streamlit-option-menu) */
+.stOptionMenu .css-1cpxqw2 {
+    background-color: #f3dfb8 !important;
+    color: #2c1d05 !important;
+    font-weight: bold;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: #a3742a;
+    font-weight: 600;
+}
+
+/* KPI Cards */
+.kpi-card {
+    background-color: #fff3c4;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    border-left: 5px solid #d9a441;
+    margin-bottom: 16px;
+    color: #2c1d05;
+    transition: transform 0.2s ease;
+}
+.kpi-card:hover {
+    transform: scale(1.01);
+}
+
+/* Buttons */
+button, .stButton>button {
+    background-color: #d9a441;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 20px;
+    font-weight: bold;
+}
+button:hover, .stButton>button:hover {
+    background-color: #a3742a;
+    color: white;
+}
+
+/* Disclaimer box */
+.disclaimer {
+    text-align: center;
+    color: #6b4f0c;
+    font-size: 0.85rem;
+    margin-top: 40px;
+}
+
+/* Chart headers */
+.chart-container h3 {
+    color: #a3742a;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Model results sidebar box */
+.model-card {
+    background-color: #fff3c4;
+    border-left: 4px solid #d9a441;
+    padding: 10px;
+    margin-bottom: 10px;
+    transform: scale(0.9);
+}
+.model-name {
+    font-weight: bold;
+    color: #2c1d05;
+    font-size: 1.1rem;
+}
+.model-metrics {
+    font-size: 0.9rem;
+    color: #3e2c09;
+}
+
+/* Background alignment and spacing */
+.block-container {
+    padding-top: 0rem !important;
+    margin-top: 0rem !important;
+    background-color: #f3dfb8 !important;
+}
+.main-title {
+    margin-top: 0px !important;
+}
+
+/* 💡 Style for Market Alerts & Recommendations section */
+/* ✅ Alerts container - prevents overlap */
+.alerts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;                 /* increased gap between alerts */
+    margin-top: 0.05rem;        /* reduced distance from title */
+    margin-bottom: 2rem;
+    width: 100%;
+    clear: both;               /* clears any floating elements */
+}
+
+/* ✅ Individual alert box - overlap prevention */
+.alert-box {
+    background-color: #fff3c4;
+    border-left: 6px solid #d9a441;
+    padding: 16px 20px;        /* increased padding for better spacing */
+    border-radius: 16px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #2c1d05;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+    
+    /* Flexbox layout for emoji + text */
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;                 /* space between emoji and text */
+    
+    /* Text handling */
+    line-height: 1.5;          /* better line spacing */
+    word-break: break-word;
+    overflow-wrap: break-word; /* handles long words */
+    
+    /* Prevent overlap */
+    position: relative;        /* ensures proper stacking context */
+    z-index: 1;               /* prevents overlap with other elements */
+    min-height: 50px;         /* minimum height to prevent squashing */
+    
+    /* Box model fixes */
+    box-sizing: border-box;   /* includes padding in width calculation */
+    width: 100%;
+    max-width: 100%;
+    
+    /* Margin for extra spacing */
+    margin-bottom: 8px;       /* additional bottom margin */
+}
+
+/* 🖱️ Hover effect - improved */
+.alert-box:hover {
+    transform: translateY(-2px); /* subtle lift instead of scale */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    z-index: 2;               /* brings hovered element to front */
+}
+
+/* ✅ Text content within alert */
+.alert-box .alert-text {
+    flex: 1;                  /* takes remaining space */
+    margin: 0;
+    padding: 0;
+}
+
+/* ✅ Emoji styling */
+.alert-box .alert-emoji {
+    flex-shrink: 0;           /* prevents emoji from shrinking */
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* ✅ Fix: Show menu bar but remove white top space */
+header[data-testid="stHeader"] {
+    background-color: transparent;
+    box-shadow: none;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+/* Ensure Streamlit's main container matches background */
+section.main > div {
+    padding-top: 0px !important;
+    background-color: #f3dfb8 !important;
+}
+
